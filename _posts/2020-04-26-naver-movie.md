@@ -29,13 +29,13 @@ soup = BeautifulSoup(html, 'html.parser')
 **html**은 가져온 정보중 ``text``정보를 저장한것이고
 **soup**는 **html**이 ``html``코드라고 알주는것입니다.
 
-![https://chohz1003.github.io/](https://chohz1003.github.io/image/naver-movie.png)
 ```python
 for tag in soup.select('div[class=tit3] a' ):  
 	url = tag.get('href')
 ```
 **tag**는 ``soup`` 안에있는 정보중에서 ``div``태그의 ``class="tit3"`` 속성으로된 값중 ``a``로시작하는 속성의 값이고
 **url**은 **tag**에서 ``href``속성 값입니다.
+![https://chohz1003.github.io/](https://chohz1003.github.io/image/naver-movie.png)
 
 ```python
 print("\n" + str(ranking) + '위 : ' + tag.text.strip())
@@ -57,7 +57,7 @@ b = a.text
 c=BeautifulSoup(b, 'html.parser')
 ```
 **c**는**b**가 ``html``코드라고 알려줍니다.
-![https://chohz1003.github.io/](https://chohz1003.github.io/image/naver-movie1.png)
+
 
 ```python
 for d in c.select('div[class=score_result] li'):  
@@ -65,15 +65,17 @@ for d in c.select('div[class=score_result] li'):
 ```
 **d**는 **c**안에있는 정보중에서 ``div``태그의 ``class="score_result"`` 속성 값중 ``li``로시작하는 속성의 값이고
 **v**는 **d**에서 ``div``태그의 ``class="score_reple"`` 속성 값중 ``p``로 시작하는 속성의 값입니다.
+![https://chohz1003.github.io/](https://chohz1003.github.io/image/naver-movie1.png)
 ```python
 print(v.text.strip())
 ```
 영화의 댓글이 ``print`` 됩니다.
-![https://chohz1003.github.io/](https://chohz1003.github.io/image/naver-movie2.png)
+
 ```python
 for e in d.select('div[class=btn_area] a'):  
 ```
 **e**는 **d**안에있는 정보중에서 ``div``태그의 ``class="class=btn_area"`` 속성 값중 ``a``로시작하는 속성의 값입니다.
+![https://chohz1003.github.io/](https://chohz1003.github.io/image/naver-movie2.png)
 ```python
 print(e.text.strip())
 ```
