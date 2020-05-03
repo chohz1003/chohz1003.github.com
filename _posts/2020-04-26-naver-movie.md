@@ -101,3 +101,4 @@ for tag in soup.select('div[class=tit3] a' ):
 		print(v.text.strip())  
 		for e in d.select('div[class=btn_area] a'):  
 			print(e.text.strip())
+```
