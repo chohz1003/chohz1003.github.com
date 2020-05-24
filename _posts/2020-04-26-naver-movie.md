@@ -3,7 +3,7 @@ layout: post
 title:  "naver movie"
 date:   2020-04-25 13:00:00
 categories: jekyll update
-permalink: /archivers/hello
+permalink: /archivers/movie
 ---
 
 
