@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Discord Bot"
-date: 2021-07-17 17:59:00
+date: 2021-07-17 24:59:00
 categories: jekyll update
 permalink: /archivers/Discord Bot
 ---
