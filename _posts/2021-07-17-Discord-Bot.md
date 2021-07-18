@@ -30,6 +30,6 @@ from discord.ext.commands import Bot #디스코드
 
 ## 2일차
 1. client방법의 어려움을 느낌.
-2. Client방법에서 ext방법으로 바꾸는중.
+2. lient방법에서 ext방법으로 바꾸는중.
 
 ## 3
