@@ -32,7 +32,7 @@ pip install youtube-dl #유튜브영상 다운
 1. client방법의 어려움을 느낌.
 2. client방법에서 ext방법으로 바꾸기로함.
 
-## 3
+## 3일차
 1. client방법에서 ext방법으로 바꿈.
 2. 음성채널에 봇을 입장,퇴장 시키는 코드를 작성함.
 
