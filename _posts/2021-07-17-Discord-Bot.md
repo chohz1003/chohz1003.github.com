@@ -43,3 +43,4 @@ pip install youtube-dl #유튜브영상 다운
 3. 다른것부터 코드짤 예정.
 
 ## 5일차
+1. ffmpeg에서 오류가남.
