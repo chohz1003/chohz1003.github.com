@@ -19,9 +19,9 @@ permalink: /archivers/Discord Bot
 ```python
 pip install PyNaCl #음성기능
 pip install -U discord #디스코드
-pip install ffmpeg #영상을 mp3로 변환
 pip install google-api-python-client #유튜브 api
 pip install youtube-dl #유튜브영상 다운
+pip install dislash.py
 ```
 
 ## 1일차
@@ -63,3 +63,6 @@ pip install youtube-dl #유튜브영상 다운
 
 ## 9일차
 1. 음악봇의 기본적인 기능들을 완성한 것 같음.
+
+## 10일차
+1.명령어가아닌 버튼으로 기능들이 작동할수있게 코드 수정중.
