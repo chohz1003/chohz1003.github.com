@@ -3,7 +3,7 @@ layout: post
 title:  "Discord Bot Class Code"
 date:   2021-08-15 16:00:00
 categories: jekyll update
-permalink: /archivers/Discord Bot Class Code
+permalink: /archivers/DiscordBotClassCode
 ---
 ```python
 import youtube_dl
