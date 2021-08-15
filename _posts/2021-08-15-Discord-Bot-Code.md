@@ -3,7 +3,7 @@ layout: post
 title: "Discord Bot Code"
 date: 2021-08-15 18:00:00
 categories: jekyll update
-permalink: /archivers/Discord Bot Code
+permalink: /archivers/DiscordBotCode
 ---
 
 ```python
