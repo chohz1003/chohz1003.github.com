@@ -3,7 +3,7 @@ layout: post
 title: "Discord Bot"
 date: 2021-07-17 18:00:00
 categories: jekyll update
-permalink: /archivers/DiscordBot
+permalink: /archivers/Discord Bot
 ---
 
 # 디스코드봇 일지
@@ -77,3 +77,4 @@ pip install asyncio
 2. 미완성 기능들은 나중에 공부하고 완성하기로함.
 
 ## 후기
+파이썬으로 디스코드봇을 만들었다. 파이썬은 ext방법과 Client방법으로 나뉘는데 구글링을 하면 대부분 ext방법을 사용하는 사람이 많기때문에 Client방법보다 ext방법이 더 만들기 쉽다고생각했다. 나도 처음에 Client방법을 사용했었는데 모르는것을 구글링할때 어려움을 겪고 ext방법으로 바꾸었다. 디스코드봇을 만들면서 어려움을 많이겪었는데 가장 어려움을 겪었던것은 구글링이었던 것 같다. 아무래도 여러가지 정보와 오픈소스들이 필요하기때문에 구글링을 많이했었는데 필요한부분을 찾는것도 어려웠지만 필요한부분을 사용하는것도 만만치 않았다. 그리고 class를 사용해서 여러가지 정보를 엮는 과정에서도 어려움을 느꼈지만 이번기회에 class에대해 공부가 많이 된것같아서 좋은 시간이었던 것 같다.
