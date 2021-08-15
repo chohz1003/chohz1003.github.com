@@ -5,6 +5,7 @@ date: 2021-08-15 17:05:45
 categories: jekyll update
 permalink: /archivers/Discord Bot Code
 ---
+```python
 import discord
 from googleapiclient.discovery import build
 from discord.ext.commands import Bot
@@ -170,3 +171,4 @@ bot.run('ODUwOTMxNzIxNzM0MDYyMTAw.YLw57A.oO_yIRdCigPxHPn4ZDy9ZmsPw28')
 ##멈췄을때 sleep시간
 ##중지중 음악시 처음부터재생
 ##스킵
+```
