@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Discord Bot Code"
+date: 2021-08-15 17:05:45
+categories: jekyll update
+permalink: /archivers/Discord Bot Code
+---
 import discord
 from googleapiclient.discovery import build
 from discord.ext.commands import Bot
