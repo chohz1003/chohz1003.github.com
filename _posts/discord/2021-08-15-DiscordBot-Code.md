@@ -3,7 +3,7 @@ layout: post
 title: "Discord Bot Code"
 date: 2021-08-15 18:00:00
 categories: jekyll update
-permalink: /archivers/DiscordBotCode
+permalink: /archivers/discordbotcode
 ---
 
 ```python
@@ -23,7 +23,9 @@ a=discordbotclass()
 intents=discord.Intents.default()
 bot = Bot(command_prefix='!', intents=intents)
 slash = SlashClient(bot)
+```
 
+```python
 @bot.event
 async def on_ready():
     print(f'{bot.user} 에 로그인하였습니다!')
@@ -35,66 +37,73 @@ async def ping(ctx):
 @bot.command()
 async def hello(ctx):
     await ctx.reply('hello!')
-
+```
+```python
 @bot.command()
 async def 들어와(ctx):
-    if ctx.author.voice and ctx.author.voice.channel:
+    if ctx.author.voice and ctx.author.voice.channel: #유저가 음성채널에 있는지 확인
         channel = ctx.author.voice.channel
-        await channel.connect()
-
+        await channel.connect() #봇이 음성채널에 연결
+```
+```python
 @bot.command()
 async def 나가(ctx):
-    await bot.voice_clients[0].disconnect()
-
+    await bot.voice_clients[0].disconnect() #봇이 음성채널에 연결끊음
+```
+```python
 @bot.command()
-async def 음악(ctx,m):
-    a.youtubelink(m)
-    d = a.bbut()
-    option = d[1]
-    cc = d[0]
-    msg = await ctx.send(
+async def 음악(ctx,m): #m= 검색어
+    a.youtubelink(m) #링크와 제목을 클래스에 임시저장
+    d = a.bbut() 
+    option = d[1] #임시저장된 제목(최대25글자)
+    cc = d[0] #임시저장된 제목(제한없음)
+```
+```python
+    msg = await ctx.send(                       #
         "음악을 선택하세요",
         components=[
             SelectMenu(
                 custom_id="음악",
-                placeholder="개수 제한 없음",
+                placeholder="개수 제한 없음",    #버튼생성
                 max_values=len(cc),
                 options=option
             )
         ]
-    )
+    )                                           #
     inter = await msg.wait_for_dropdown()
     labels = [option.value for option in inter.select_menu.selected_options]
-    k=a.addbbut(labels)
+    k=a.addbbut(labels) #선택한 음악의 링크와 제목
     await inter.reply(f"음악선택완료 {''.join('')}")
-    a.addplist(k)
+```
+```python
+    a.addplist(k) #k값을 클래스에 저장
     y=0
     while 1:
-        b=a.flist()
+        b=a.flist() #저장된 음악 링크
         y=y+1
-        if len(b) == 0:
-            break
+        if len(b) == 0: 
+            break 
         else:
             try:
-                if ctx.author.voice and ctx.author.voice.channel:
+                if ctx.author.voice and ctx.author.voice.channel: #유저가 음성채널에 있는지 확인
                     channel = ctx.author.voice.channel
-                    await channel.connect()
+                    await channel.connect() #봇이 음성채널에 연결
             except:
                 pass
-            url = b[0]
+            url = b[0] #저장된 음악 링크중 첫번째 링크
             c = a.ydll(url)
             URL = c[0]
-            FFMPEG_OPTIONS = c[1]
-            voice = bot.voice_clients[0]
+            FFMPEG_OPTIONS = c[1] 
+            voice = bot.voice_clients[0] 
             try:
-                voice.play(discord.FFmpegPCMAudio(URL, **FFMPEG_OPTIONS))
+                voice.play(discord.FFmpegPCMAudio(URL, **FFMPEG_OPTIONS)) #봇이 음악 재생
             except:
                 pass
-            await asyncio.sleep(c[2] + 1)
+            await asyncio.sleep(c[2] + 1) #음악 재생길이+1초 뒤에 다음코드가 작동함
             #k=a.flist()
             #if k[0]==b[0]:
-            a.llist()
-            await bot.voice_clients[0].disconnect()
+            a.llist() 저장된 음악 링크와 제목중에서 첫번째 링크와 제목을 삭제
+            await bot.voice_clients[0].disconnect() #봇이 음성채널에 연결끊음
 
 @bot.command()
 async def 리스트(ctx):
@@ -114,36 +123,6 @@ async def 리스트(ctx):
 async def 초기화(ctx):
     a.nplist()
     await ctx.send('초기화 완료')
-
-#@bot.command()
-#async def 스탑(ctx):
-#    if not bot.voice_clients[0].is_paused():
-#        bot.voice_clients[0].pause()
-
-#@bot.command()
-#async def 재생(ctx):
-#    if bot.voice_clients[0].is_paused():
-#        bot.voice_clients[0].resume()
-
-# @bot.command()
-# async def 스킵(ctx):
-#     await bot.voice_clients[0].disconnect()
-#     while 1:
-#         b = a.llist()
-#         if len(b) == 0:
-#             break
-#         else:
-#             channel = ctx.author.voice.channel
-#             await channel.connect()
-#             url = b[0]
-#             c = a.ydll(url)
-#             URL = c[0]
-#             FFMPEG_OPTIONS = c[1]
-#             voice = bot.voice_clients[0]
-#             voice.play(discord.FFmpegPCMAudio(URL, **FFMPEG_OPTIONS))
-#             await asyncio.sleep(c[2] + 1)
-#             a.llist()
-#             await bot.voice_clients[0].disconnect()
 
 @bot.command()
 async def 삭제(ctx):
@@ -168,8 +147,4 @@ async def 삭제(ctx):
     a.nnplist(k)
 
 bot.run('ODUwOTMxNzIxNzM0MDYyMTAw.YLw57A.oO_yIRdCigPxHPn4ZDy9ZmsPw28')
-
-##멈췄을때 sleep시간
-##중지중 음악시 처음부터재생
-##스킵
 ```
