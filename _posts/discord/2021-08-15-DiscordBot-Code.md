@@ -146,5 +146,5 @@ async def 삭제(ctx):
     await inter.reply(f"음악삭제완료{''.join('')}")
     a.nnplist(k)
 
-bot.run('ODUwOTMxNzIxNzM0MDYyMTAw.YLw57A.oO_yIRdCigPxHPn4ZDy9ZmsPw28')
+bot.run('')
 ```
