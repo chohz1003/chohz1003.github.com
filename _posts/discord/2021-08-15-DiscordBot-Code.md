@@ -64,7 +64,7 @@ async def 음악(ctx,m): #m= 검색어
         components=[
             SelectMenu(
                 custom_id="음악",
-                placeholder="개수 제한 없음",    #버튼생성
+                placeholder="음악 선택",    #버튼생성
                 max_values=len(cc),
                 options=option
             )
@@ -92,7 +92,7 @@ async def 음악(ctx,m): #m= 검색어
                 pass
             url = b[0] #저장된 음악 링크중 첫번째 링크
             c = a.ydll(url)
-            URL = c[0]
+            URL = c[0] 
             FFMPEG_OPTIONS = c[1] 
             voice = bot.voice_clients[0] 
             try:
@@ -104,10 +104,11 @@ async def 음악(ctx,m): #m= 검색어
             #if k[0]==b[0]:
             a.llist() 저장된 음악 링크와 제목중에서 첫번째 링크와 제목을 삭제
             await bot.voice_clients[0].disconnect() #봇이 음성채널에 연결끊음
-
+```
+```python
 @bot.command()
 async def 리스트(ctx):
-    b=a.plist()
+    b=a.plist() #저장된 음악 제목
     d=0
     if b==[]:
         await ctx.send('플레이리스트없음')
@@ -118,33 +119,37 @@ async def 리스트(ctx):
                 d = d + 1
             else:
                 await ctx.send(c)
-
+```
+```python
 @bot.command()
-async def 초기화(ctx):
-    a.nplist()
+async def 초기화(ctx): #(듣고있는것 제외)
+    a.nplist() #저장된 음악 링크와 제목중 첫번째 링크와 제목빼고 삭제
     await ctx.send('초기화 완료')
-
+```
+```python
 @bot.command()
 async def 삭제(ctx):
     d = a.pplist()
-    option = d[1]
-    cc = len(d[0])-1
-    msg = await ctx.send(
+    option = d[1] 저장된 제목
+    cc = len(d[0])-1 #저장된 제목 개수-1 (듣고있는 음악 제외)
+```
+```python
+    msg = await ctx.send(                  #
         "음악을 선택하세요",
-        components=[
+        components=[                       
             SelectMenu(
                 custom_id="음악",
-                placeholder="음악선택",
+                placeholder="음악선택",     #버튼생성
                 max_values=cc,
                 options=option
             )
         ]
-    )
+    )                                      #
     inter = await msg.wait_for_dropdown()
     labels = [option.value for option in inter.select_menu.selected_options]
-    k = a.adpplist(labels)
+    k = a.adpplist(labels) #선택한 음악의 링크와 제목
     await inter.reply(f"음악삭제완료{''.join('')}")
-    a.nnplist(k)
+    a.nnplist(k) #k값 클래스에서 
 
-bot.run('')
+bot.run('토큰')
 ```
