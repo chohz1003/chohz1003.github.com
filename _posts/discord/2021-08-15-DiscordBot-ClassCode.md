@@ -12,12 +12,13 @@ from googleapiclient.discovery import build
 from dislash import SelectOption
 
 class discordbotclass:
-    playlist=[]
-    addplaylist=[]
-    titlelist=[]
-    addtitlelist=[]
-
-    def youtubelink(self,m):
+    playlist=[] #음악 링크
+    addplaylist=[] #임시 음악 링크
+    titlelist=[] #음악 제목
+    addtitlelist=[] #임시 음악 제목
+```
+```python
+    def youtubelink(self,m): #m=검색어
         DEVELOPER_KEY = 'AIzaSyCfhAenYnxIP5u8QCgNZOg81pn3MZZVJY4'
         YOUTUBE_API_SERVICE_NAME = "youtube"
         YOUTUBE_API_VERSION = "v3"
@@ -28,8 +29,10 @@ class discordbotclass:
             part="snippet",
             maxResults=5
         ).execute()
+```
+```python
         json1 = json.loads(json.dumps(search_response))
-        json2 = json1.get("items")
+        json2 = json1.get("items") 
         self.addplaylist = []
         self.addtitlelist = []
         for a in json2:
@@ -45,8 +48,9 @@ class discordbotclass:
             else:
                 self.addtitlelist.append(b.get('title').replace('&#39;',"'"))
         return None
-
-    def addplist(self, m):
+```
+```python
+    def addplist(self, m): #m=선택한 음악
         b=m.split(',')
         b=list(map(int, b))
         for d in b:
@@ -56,19 +60,23 @@ class discordbotclass:
             self.titlelist.append(self.addtitlelist[d])
         self.addtitlelist = []
         return None
-
+```
+```python
     def plist(self):
         return self.titlelist
-
+```
+```python
     def flist(self):
         return self.playlist
-
+```
+```python
     def nplist(self):
         del self.playlist[1:]
         del self.titlelist[1:]
         return None
-
-    def ydll(self,url):
+```
+```python
+    def ydll(self,url): #url=음악 링크
         ydl_opts = {'format': 'bestaudio'}
         FFMPEG_OPTIONS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5',
                             'options': '-vn'}
@@ -77,13 +85,15 @@ class discordbotclass:
             URL = info['formats'][0]['url']
             t=info['duration']
         return URL,FFMPEG_OPTIONS,t
-
+```
+```python
     def llist(self):
         del self.titlelist[0]
         del self.playlist[0]
         return self.playlist
-
-    def nnplist(self,m):
+```
+```python
+    def nnplist(self,m): #m=선택한 음악
         b = m.split(',')
         b = list(map(int, b))
         b.reverse()
@@ -92,7 +102,8 @@ class discordbotclass:
         for d in b:
             del self.playlist[d]
         return None
-
+```
+```python
     def bbut(self):
         c=[]
         d=0
@@ -101,8 +112,9 @@ class discordbotclass:
             d=d+1
             c.append(SelectOption("%s" % b[:25], "%s" % b+str(d)))
         return a,c
-
-    def addbbut(self,m):
+```
+```python
+    def addbbut(self,m): #m=선택한 음악 제목
         c=''
         d=0
         f=0
@@ -136,7 +148,8 @@ class discordbotclass:
                     d = d + 1
         c=c[:-1]
         return c
-
+```
+```python
     def pplist(self):
         c = []
         d = 0
@@ -145,8 +158,9 @@ class discordbotclass:
             d = d + 1
             c.append(SelectOption("%s" % b[:25], "%s" % b + str(d)))
         return a, c
-
-    def adpplist(self,m):
+```
+```python
+    def adpplist(self,m): #m=선택한 음악
         c = ''
         d = 0
         f = 0
