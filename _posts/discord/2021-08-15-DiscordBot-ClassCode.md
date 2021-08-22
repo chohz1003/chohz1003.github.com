@@ -81,7 +81,7 @@ class discordbotclass:
     def llist(self):
         del self.titlelist[0]
         del self.playlist[0]
-        return None
+        return self.playlist
 
     def nnplist(self,m):
         b = m.split(',')
