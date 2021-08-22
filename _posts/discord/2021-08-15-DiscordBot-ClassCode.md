@@ -3,7 +3,7 @@ layout: post
 title:  "Discord Bot Class Code"
 date:   2021-08-15 16:00:00
 categories: jekyll update
-permalink: /archivers/DiscordBotClassCode
+permalink: /archivers/discordbotclasscode
 ---
 ```python
 import youtube_dl
@@ -81,7 +81,7 @@ class discordbotclass:
     def llist(self):
         del self.titlelist[0]
         del self.playlist[0]
-        return self.playlist
+        return None
 
     def nnplist(self,m):
         b = m.split(',')
