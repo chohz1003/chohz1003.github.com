@@ -17,10 +17,10 @@ permalink: /archivers/discordbot
 
 ### pip 모듈
 ```python
-pip install PyNaCl #음성기능
-pip install -U discord #디스코드
-pip install google-api-python-client #유튜브 api
-pip install youtube-dl #유튜브영상 다운
+pip install PyNaCl 
+pip install -U discord 
+pip install google-api-python-client 
+pip install youtube-dl 
 pip install dislash.py
 pip install asyncio
 ```
