@@ -149,7 +149,7 @@ async def 삭제(ctx):
     labels = [option.value for option in inter.select_menu.selected_options]
     k = a.adpplist(labels) #선택한 음악의 링크와 제목
     await inter.reply(f"음악삭제완료{''.join('')}")
-    a.nnplist(k) #k값 클래스에서 
+    a.nnplist(k) #k값 클래스에서 삭제
 
 bot.run('토큰')
 ```
