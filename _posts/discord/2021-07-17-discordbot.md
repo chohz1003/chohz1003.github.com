@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Discord Bot"
+title: "discordbot"
 date: 2021-07-17 18:00:00
 categories: jekyll update
-permalink: /archivers/Discord Bot
+permalink: /archivers/discordbot
 ---
 
 # 디스코드봇 일지
