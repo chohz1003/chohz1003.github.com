@@ -1,12 +1,3 @@
----
-layout: post
-title: "Discord Bot Code"
-date: 2021-08-15 18:00:00
-categories: jekyll update
-permalink: /archivers/discordbotcode
----
-
-```python
 import discord
 from googleapiclient.discovery import build
 from discord.ext.commands import Bot
@@ -19,13 +10,10 @@ YOUTUBE_API_SERVICE_NAME="youtube"
 YOUTUBE_API_VERSION="v3"
 youtube = build(YOUTUBE_API_SERVICE_NAME,YOUTUBE_API_VERSION,developerKey=DEVELOPER_KEY)
 a=discordbotclass()
-
 intents=discord.Intents.default()
 bot = Bot(command_prefix='!', intents=intents)
 slash = SlashClient(bot)
-```
 
-```python
 @bot.event
 async def on_ready():
     print(f'{bot.user} 에 로그인하였습니다!')
@@ -37,28 +25,23 @@ async def ping(ctx):
 @bot.command()
 async def hello(ctx):
     await ctx.reply('hello!')
-```
-```python
+
 @bot.command()
 async def 들어와(ctx):
     if ctx.author.voice and ctx.author.voice.channel: #유저가 음성채널에 있는지 확인
         channel = ctx.author.voice.channel
         await channel.connect() #봇이 음성채널에 연결
-```
-```python
+        
 @bot.command()
 async def 나가(ctx):
     await bot.voice_clients[0].disconnect() #봇이 음성채널에 연결끊음
-```
-```python
+
 @bot.command()
 async def 음악(ctx,m): #m= 검색어
     a.youtubelink(m) #링크와 제목을 클래스에 임시저장
     d = a.bbut() 
     option = d[1] #임시저장된 제목(최대25글자)
     cc = d[0] #임시저장된 제목(제한없음)
-```
-```python
     msg = await ctx.send(                       #
         "음악을 선택하세요",
         components=[
@@ -74,8 +57,6 @@ async def 음악(ctx,m): #m= 검색어
     labels = [option.value for option in inter.select_menu.selected_options]
     k=a.addbbut(labels) #선택한 음악의 링크와 제목
     await inter.reply(f"음악선택완료 {''.join('')}")
-```
-```python
     a.addplist(k) #k값을 클래스에 저장
     y=0
     while 1:
@@ -104,8 +85,7 @@ async def 음악(ctx,m): #m= 검색어
             #if k[0]==b[0]:
             a.llist() 저장된 음악 링크와 제목중에서 첫번째 링크와 제목을 삭제
             await bot.voice_clients[0].disconnect() #봇이 음성채널에 연결끊음
-```
-```python
+
 @bot.command()
 async def 리스트(ctx):
     b=a.plist() #저장된 음악 제목
@@ -119,21 +99,18 @@ async def 리스트(ctx):
                 d = d + 1
             else:
                 await ctx.send(c)
-```
-```python
+
 @bot.command()
 async def 초기화(ctx): #(듣고있는것 제외)
     a.nplist() #저장된 음악 링크와 제목중 첫번째 링크와 제목빼고 삭제
     await ctx.send('초기화 완료')
-```
-```python
+
 @bot.command()
 async def 삭제(ctx):
     d = a.pplist()
     option = d[1] 저장된 제목
     cc = len(d[0])-1 #저장된 제목 개수-1 (듣고있는 음악 제외)
-```
-```python
+
     msg = await ctx.send(                  #
         "음악을 선택하세요",
         components=[                       
@@ -152,4 +129,3 @@ async def 삭제(ctx):
     a.nnplist(k) #k값 클래스에서 삭제
 
 bot.run('토큰')
-```
