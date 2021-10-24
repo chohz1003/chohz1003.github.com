@@ -5,7 +5,7 @@ from discordbotclass import discordbotclass
 import asyncio
 from dislash import SlashClient, SelectMenu
 
-DEVELOPER_KEY = 'AIzaSyCfhAenYnxIP5u8QCgNZOg81pn3MZZVJY4'
+DEVELOPER_KEY = 'key'
 YOUTUBE_API_SERVICE_NAME="youtube"
 YOUTUBE_API_VERSION="v3"
 youtube = build(YOUTUBE_API_SERVICE_NAME,YOUTUBE_API_VERSION,developerKey=DEVELOPER_KEY)
