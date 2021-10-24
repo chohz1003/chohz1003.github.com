@@ -18,11 +18,6 @@ permalink: /archivers/discordbot
 ### pip 모듈
 ```python
 pip install PyNaCl 
-pip install -U discord 
-pip install google-api-python-client 
-pip install youtube-dl 
-pip install dislash.py
-pip install asyncio
 ```
 
 ## 1일차
