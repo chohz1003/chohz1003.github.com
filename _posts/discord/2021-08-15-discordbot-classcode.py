@@ -10,7 +10,7 @@ class discordbotclass:
     addtitlelist=[] #임시 음악 제목
 
     def youtubelink(self,m): #m=검색어
-        DEVELOPER_KEY = 'AIzaSyCfhAenYnxIP5u8QCgNZOg81pn3MZZVJY4'
+        DEVELOPER_KEY = 'key'
         YOUTUBE_API_SERVICE_NAME = "youtube"
         YOUTUBE_API_VERSION = "v3"
         youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION, developerKey=DEVELOPER_KEY)
