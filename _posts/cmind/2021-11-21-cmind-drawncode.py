@@ -5,12 +5,10 @@ from PyQt5.QtCore import *
 import sys
 from worrd import gud
 
-def recvMsg(soc):
+def recvMsg(soc): #좌표 받음
     while True:
         data = soc.recv(15)
         msg = data.decode()
-
-
         a=msg.split(',')
         ex.sok(a[0],a[1],a[2],a[3])
     soc.close()
@@ -38,7 +36,7 @@ def main():
 client_socket  = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket .connect(("localhost", 4444))
 
-class MyApp(QMainWindow):
+class MyApp(QMainWindow): #창
     def __init__(self):
         super().__init__()
         self.image = QImage(QSize(400, 400), QImage.Format_RGB32)
@@ -49,7 +47,7 @@ class MyApp(QMainWindow):
         self.show()
 
 
-    def initUI(self):
+    def initUI(self): #창 설정
         self.setWindowTitle('Simple Painter')
         self.setGeometry(700, 200, 400, 400)
         a = gud()
@@ -64,7 +62,7 @@ class MyApp(QMainWindow):
         self.button.setText('정답')
         self.button.clicked.connect(self.button_event)
 
-    def button_event(self):
+    def button_event(self): #정답버튼 눌렀을때
         text = self.line_edit.text()
         ekq = gud()
         if text == ekq[0]:
@@ -85,6 +83,6 @@ class MyApp(QMainWindow):
 if __name__ == '__main__':
     main()
     app = QApplication(sys.argv)
-    ex = MyApp()
+    ex = MyApp() #창
     sys.exit(app.exec_())
     client_socket.close()
