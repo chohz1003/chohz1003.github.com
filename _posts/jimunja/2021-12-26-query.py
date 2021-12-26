@@ -24,3 +24,19 @@ try:
     print(cursor.lastrowid)
 finally:
     conn.close()
+#########################################################################
+import pymysql.cursors
+conn = pymysql.connect(host='183.99.87.90',
+        user='root',
+        password='swhacademy!',
+        db='hangcheol',
+        charset='utf8')
+try:
+    with conn.cursor() as cursor:
+        sql = 'SELECT 이미지 FROM img'
+        cursor.execute(sql)
+        results = cursor.fetchall()
+        for result in results:
+            print(result)
+finally:
+    conn.close()
