@@ -1,0 +1,8 @@
+c = input()
+a=c.split(' ')
+print(int(a[0])+int(a[1]))
+print(int(a[0])-int(a[1]))
+print(int(a[0])*int(a[1]))
+print(int(a[0])//int(a[1]))
+print(int(a[0])%int(a[1]))
+print(format(round(float(a[0])/float(a[1]),4), ".2f"))
