@@ -1,0 +1,7 @@
+a=input()
+b=a.split()
+q=int(b[0])
+w=int(b[1])
+e=int(b[2])
+r=int(b[3])
+print(round(q*w*e*r/8/1024/1024,1),'MB')
