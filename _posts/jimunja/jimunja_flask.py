@@ -5,7 +5,7 @@ from jimunja_separation import korean_separation
 app = Flask(__name__)
 
 @app.route('/')
-def student():
+def input():
    first_img = jimunja_select.select('입력')
    return render_template('input.html',result = first_img[0])
 
