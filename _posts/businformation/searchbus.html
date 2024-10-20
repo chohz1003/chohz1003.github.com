@@ -14,12 +14,14 @@
         <span> 검색 </span>
     </div>
 
-    <div>
-        <input type="text" style= "width:90%" size="100" maxlength="50" placeholder="정류소 노선을 입력하세요">
-        <span>
-          <button type="button" class="btn btn-outline-primary btn-sm">검색</button>
-        </span>
-    </div>
+    <form action = "http://localhost:5000/fas" method = "POST">
+         <div style ="text-align:center" class="fixed">
+             <input type = "text" name = "Name" style= "width:90%" size="100" maxlength="50" placeholder="정류소 노선을 입력하세요"/>
+             <input type = "submit" value = "검색" />
+         </div>
+      </form>
+
+
 
     <div class="btn-group" role="group" aria-label="Basic example">
       <button type="button" class="btn btn-primary btn-sm">노선</button>
@@ -27,6 +29,13 @@
       <button type="button" class="btn btn-primary btn-sm">장소</button>
     </div>
     <button type="button" class="btn" style="float:right">삭제</button>
+
+    <footer class="py-5 mt-auto">
+    <div class="btn-group;fixed-bottom" role="group" aria-label="Basic example" style="transform: translateY(500%); position: relative;">
+        <button type="button" class="btn btn-primary" style= "width:8%; margin: 0px -3px;" ><</button>
+        <button type="button" class="btn btn-primary" style= "width:8%; margin: 0px -3px">집</button>
+    </div>
+  </footer>
 
 
 
